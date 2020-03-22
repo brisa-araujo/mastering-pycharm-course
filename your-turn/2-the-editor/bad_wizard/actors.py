@@ -2,7 +2,7 @@ import random
 
 
 class Creature:
-    def __init__(self, name, the_level):
+    def __init__(self, name: object, the_level: object) -> object:
         self.name = name
         self.level = the_level
 
@@ -18,6 +18,13 @@ class Creature:
 class Wizard(Creature):
 
     def attack(self, creature):
+        """
+        Wizard attacks a creature
+
+        :param creature: a creature that will be attacked
+        :type creature: Creature
+        :returns: True if wizard wins, False otherwise
+        """
         print("The wizard {} attacks {}!".format(
             self.name, creature.name
         ))
@@ -34,6 +41,9 @@ class Wizard(Creature):
         else:
             print("The wizard has been DEFEATED!!!")
             return False
+
+    def wake_up(self):
+        print(f'The wizard {self.name} wakes up.')
 
 
 class SmallAnimal(Creature):
